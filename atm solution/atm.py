@@ -14,6 +14,7 @@ def widthraw_req(balance,request):
     while request > 0:
         if balance < request:
             print "Out of Balance, only "+str(balance)+" is availble for widthraw!"
+            new_balance += request
             break
         if request >=100:
             print "Give 100"
