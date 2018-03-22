@@ -10,6 +10,7 @@ def input_request ():
     return input
 
 def widthraw_req(balance,request):
+    new_balance = balance -request
     while request > 0:
         if balance < request:
             print "Out of Balance, only "+str(balance)+" is availble for widthraw!"
@@ -29,7 +30,12 @@ def widthraw_req(balance,request):
         elif request >0:
             print "Give "+str(request)
             request =0
+    return new_balance
 
 balance =500
-request = input_request()
-widthraw_req(balance,request)
+while raw_input("if you Want to widthraw please enter 'Y' : ") =="Y":
+    request = input_request()
+    balance = widthraw_req(balance,request)
+    if balance ==0:
+        print "Your Balance Reached Zero."
+        break
